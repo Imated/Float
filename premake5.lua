@@ -42,16 +42,18 @@ project "Float"
     includedirs
     {
         "src",
-        "libs/glad/include/",
-        "libs/glm/glm/",
-        "libs/SDL2/include/",
-        "libs/",
+        "lib/glad/include/",
+        "lib/glm/glm/",
+        "lib/SDL2/include/",
+        "lib/",
     }
     
     links
     {
         "opengl32.lib",
         "winmm.lib",
+        "lib/SDL2/lib/SDL2.lib",
+        "lib/SDL2/lib/SDL2main.lib"
     }
 
     filter "system:windows"
