@@ -10,7 +10,7 @@ int init()
         printf("Could not initialize SDL: %s.\n", SDL_GetError());
         return -1;
     }
-    printf("SDL Successfully Initialized.");
+    printf("SDL Successfully Initialized. \n");
     return 0;
 }
 

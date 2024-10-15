@@ -4,7 +4,12 @@
 
 Window::Window(int width, int height, const char* title): _width(width), _height(height), _title(title)
 {
-    _window = SDL_CreateWindow(_title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _width, _height, SDL_WINDOW_SHOWN);
+    _window = SDL_CreateWindow(_title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _width, _height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+    if(_window == nullptr)
+    {
+        printf("Could not create window: %s.\n", SDL_GetError());
+        return;
+    }
     _isRunning = true;
 }
 
@@ -22,7 +27,7 @@ void Window::Update()
         case SDL_QUIT:
             _isRunning = false;
             break;
-        default: ;
+        default: break;
         }
     }
 }
